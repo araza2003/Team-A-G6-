@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mastermind Text Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    #startBtn {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #startBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mastermind Text Game</h1>
+  <button id="startBtn">Start Game</button>
+
+  <script>
+    // Utility function to generate a random integer between min and max inclusive
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Function to generate a secret code: an array of 4 distinct numbers from 1 to 6
+    function generateSecretCode() {
+      let available = [1, 2, 3, 4, 5, 6];
+      let code = [];
+      for (let i = 0; i < 4; i++) {
+        let idx = getRandomInt(0, available.length - 1);
+        code.push(available[idx]);
+        available.splice(idx, 1); // Remove used number to ensure uniqueness
+      }
+      return code;
+    }
+
+    // Function to score a guess against the secret code
+    function scoreGuess(secret, guess) {
+      let blacks = 0;   // Correct position
+      let whites = 0;   // Correct number but wrong position 
+
+      // Count black pegs (correct number in correct position)
+      for (let i = 0; i < 4; i++) {
+        if (guess[i] === secret[i]) {
+          blacks++;
+        }
+      }
+
+      // Count white pegs (correct number but wrong position)
+      let common = guess.filter(num => secret.includes(num)).length;
+      whites = common - blacks;
+
+      //console.log('Secret Code:', secret);
+
+      return { blacks, whites };
+    }
+
+    // Main game function with input validation and guess limit
+    function startGame() {
+      const secretCode = generateSecretCode();
+      let guessCount = 0;
+      let solved = false;
+      const maxGuesses = 10; // Set maximum number of guesses
+
+      // Uncomment the line below for debugging to see the secret code in console
+      // console.log('Secret Code:', secretCode);
+
+      while (!solved && guessCount < maxGuesses) {
+        let input = prompt("Enter your guess (four distinct numbers between 1 and 6, separated by spaces):");
+        
+        // If the user cancels the prompt, end the game
+        if (input === null) {
+          alert("Game cancelled.");
+          return;
+        }
+
+        // Parse and validate input
+        let guess = input.trim().split(/\s+/).map(Number);
+
+        // Input Validation: Check for exactly four numbers
+        if (guess.length !== 4) {
+          alert("Invalid input. Please enter exactly four numbers.");
+          continue; // Restart the loop for a new input
+        }
+
+        // Input Validation: Check if all entries are numbers between 1 and 6
+        if (guess.some(num => isNaN(num) || num < 1 || num > 6)) {
+          alert("Invalid input. Ensure all entries are numbers between 1 and 6.");
+          continue; 
+        }
+
+        // Input Validation: Check for duplicate number set is used to eliminate duplicate entity 
+        let uniqueNumbers = new Set(guess);
+        if (uniqueNumbers.size !== 4) {
+          alert("Numbers must be distinct. Please enter four unique numbers.");
+          continue; 
+        }
+
+        // Increase guess count
+        guessCount++;
+
+        // Score the guess destructor
+        let { blacks, whites } = scoreGuess(secretCode, guess);
+
+       
+        alert(`Your guess: ${guess.join(' ')}\nScore: ${blacks} black peg(s), ${whites} white peg(s)`);
+
+        // Check if the guess is completely correct
+        if (blacks === 4) {
+          solved = true;
+          alert(`Congratulations! You solved the code in ${guessCount} guesses.`);
+        } else if (guessCount === maxGuesses) {
+          alert(`Game over! You've used all ${maxGuesses} guesses. The code was ${secretCode.join(' ')}.`);
+        }
+      }
+    }
+
+    // Attach event listener to start button
+    document.getElementById('startBtn').addEventListener('click', startGame);
+  </script>
+
+</body>
+</html>

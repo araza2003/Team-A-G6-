@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alert Speed Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Alert Speed Test</h1>
+  <p>Click the button to start the speed test for alerts.</p>
+  <button id="startTestBtn">Start Test</button>
+
+  <script>
+    document.getElementById('startTestBtn').addEventListener('click', function() {
+      // Record the start time of the first alert
+      let startTime = new Date();
+      let count = 0;  // Number of alerts shown
+
+      // Function to show alert boxes and count them for 10 seconds
+      function showAlerts() {
+        // Calculate elapsed time in milliseconds
+        let elapsed = new Date() - startTime;
+        if (elapsed < 10000) {  // 10 seconds = 10000 ms
+          count++;
+          alert("Alert box #" + count);
+          // After user closes this alert, try showing another
+          showAlerts();
+        } else {
+          // 10 seconds have passed: calculate alerts per second
+          let alertsPerSecond = count / 10;
+          reportResults(alertsPerSecond);
+        }
+      }
+
+      // Function to report the results for 2 seconds
+      function reportResults(rate) {
+        let reportStart = new Date();
+        function reportLoop() {
+          let elapsedReport = new Date() - reportStart;
+          if (elapsedReport < 2000) {  // 2 seconds = 2000 ms
+            alert("Alerts per second: " + rate.toFixed(2));
+            reportLoop();
+          } else {
+            alert("Reporting finished.");
+          }
+        }
+        reportLoop();
+      }
+
+      // Start showing alerts for 10 seconds
+      showAlerts();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Base2 Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1em;
+      margin: 10px;
+    }
+    #results {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Base2 Checker</h1>
+  <p>Enter a string to check if it starts with 1, has only 0s or 1s, and ends with 2:</p>
+  <input type="text" id="inputString" placeholder="e.g., 100102" />
+  <button id="checkBtn">Check String</button>
+
+  <div id="results">
+    <p id="regexResult"></p>
+    <p id="noRegexResult"></p>
+  </div>
+
+  <script>
+    // Version using Regular Expressions
+    function base2Regex(str) {
+      const pattern = /^1[01]*2$/;
+      return pattern.test(str);
+    }
+
+    // Version without Regular Expressions
+    function base2NoRegex(str) {
+      // Must be at least two characters: starts with '1' and ends with '2'
+      if (str.length < 2) return false;
+      if (str[0] !== '1' || str[str.length - 1] !== '2') return false;
+      // Check middle characters are only '0' or '1'
+      for (let i = 1; i < str.length - 1; i++) {
+        if (str[i] !== '0' && str[i] !== '1') {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    document.getElementById('checkBtn').addEventListener('click', function() {
+      const input = document.getElementById('inputString').value;
+      const regexResult = base2Regex(input);
+      const noRegexResult = base2NoRegex(input);
+
+      document.getElementById('regexResult').textContent = 
+        `Using regex: ${regexResult}`;
+      document.getElementById('noRegexResult').textContent = 
+        `Without regex: ${noRegexResult}`;
+    });
+  </script>
+
+</body>
+</html>
