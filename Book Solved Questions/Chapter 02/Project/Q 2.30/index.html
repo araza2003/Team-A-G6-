@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>HTML Reference with Frames</title>
+</head>
+<frameset cols="25%, 75%">
+    <!-- Left Column -->
+    <frameset rows="20%, 80%">
+        <!-- Upper Left Frame -->
+        <frame src="menu.html" name="menuFrame" />
+        <!-- Lower Left Frame -->
+        <frame src="elements.html" name="tableFrame" />
+    </frameset>
+    <!-- Right Frame -->
+    <frame src="div.html" name="detailFrame" />
+</frameset>
+<noframes>
+    <body>
+        <p>Your browser does not support frames. Please update your browser.</p>
+    </body>
+</noframes>
+<div>
+  <p>Validate this page: <a href="http://validator.w3.org/check/referer">W3C Validator</a></p>
+</div>
+</html>

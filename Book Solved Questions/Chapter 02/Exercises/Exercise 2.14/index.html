@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Flies Statistics - XHTML 1.0 Solution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .instructions {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#answer">Answer</a>
+        <a href="#result">Result</a>
+    </div>
+
+    <div class="container" id="question">
+        <h2>Question:</h2>
+        <p>Rewrite the following example taken from the HTML 4.01 specification so that it com-
+            plies with the requirements of the XHTML 1.0 standard as discussed in this chapter. The
+            table produced by your version should look exactly the same as the table produced by
+            the original version in a browser compliant with HTML 4.01.</p>
+        <pre>
+&lt;TABLE border="1"
+        summary="This table gives some statistics about fruit
+            flies: average height and weight, and percentage
+            with red eyes (for both males and females).">
+            
+&lt;CAPTION&gt;&lt;EM&gt;A test table with merged cells&lt;/EM&gt;&lt;/CAPTION&gt;
+&lt;TR&gt;&lt;TH rowspan="2"&gt;&lt;TH colspan="2"&gt;Average
+    &lt;TH rowspan="2"&gt;Red&lt;BR&gt;eyes
+&lt;TR&gt;&lt;TH&gt;height&lt;TH&gt;weight
+&lt;TR&gt;&lt;TH&gt;Males&lt;TD&gt;1.9&lt;TD&gt;0.003&lt;TD&gt;40%
+&lt;TR&gt;&lt;TH&gt;Females&lt;TD&gt;1.7&lt;TD&gt;0.002&lt;TD&gt;43%
+&lt;/TABLE&gt;
+        </pre>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p>The provided HTML code has been updated to comply with XHTML 1.0 standards by ensuring proper closing of tags, proper use of lowercase for attributes, and self-closing of tags like <code>&lt;br /&gt;</code>.</p>
+        <p>Here is the corrected code shown above.</p>
+        <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;Fruit Flies Statistics&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table border="1" summary="This table gives some statistics about fruit flies: average height and weight, and percentage with red eyes (for both males and females)."&gt;
+    &lt;caption&gt;&lt;em&gt;A test table with merged cells&lt;/em&gt;&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th rowspan="2"&gt;&lt;/th&gt;
+        &lt;th colspan="2"&gt;Average&lt;/th&gt;
+        &lt;th rowspan="2"&gt;Red&lt;br /&gt;eyes&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;height&lt;/th&gt;
+        &lt;th&gt;weight&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Males&lt;/th&gt;
+        &lt;td&gt;1.9&lt;/td&gt;
+        &lt;td&gt;0.003&lt;/td&gt;
+        &lt;td&gt;40%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Females&lt;/th&gt;
+        &lt;td&gt;1.7&lt;/td&gt;
+        &lt;td&gt;0.002&lt;/td&gt;
+        &lt;td&gt;43%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </div>
+    </div>
+
+    <div class="container" id="result">
+        <h2>Result</h2>
+        <pre>
+            <?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+            <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+              <title>Fruit Flies Statistics</title>
+            </head>
+            <body>
+              <table border="1" summary="This table gives some statistics about fruit flies: average height and weight, and percentage with red eyes (for both males and females).">
+                <caption><em>A test table with merged cells</em></caption>
+                <tr>
+                  <th rowspan="2"></th>
+                  <th colspan="2">Average</th>
+                  <th rowspan="2">Red<br />eyes</th>
+                </tr>
+                <tr>
+                  <th>height</th>
+                  <th>weight</th>
+                </tr>
+                <tr>
+                  <th>Males</th>
+                  <td>1.9</td>
+                  <td>0.003</td>
+                  <td>40%</td>
+                </tr>
+                <tr>
+                  <th>Females</th>
+                  <td>1.7</td>
+                  <td>0.002</td>
+                  <td>43%</td>
+                </tr>
+              </table>
+            </body>
+            </html>            
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exercise 2.9</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        .extra-space {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#answer">Answer</a>
+    </div>
+    
+    <div class="container" id="question">
+        <h2>Exercise 2.9</h2>
+        <p>If two displays have the same physical size but one has higher resolution than the other, then the same image displayed on both displays with the same width and height in pixels will appear how: smaller on the higher resolution display, larger on the higher resolution display, or the same size on both displays? Explain.</p>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p>If two displays have the same physical size but one has a higher resolution, the same image displayed on both displays with the same width and height in pixels will appear <strong>smaller on the higher resolution display</strong>.</p>
+        <p>Here's why:</p>
+        <ul>
+            <li>Resolution refers to the number of pixels in a given physical area. A higher resolution means more pixels are packed into the same physical space.</li>
+            <br>
+            <li>If the displays have the same physical size, but one has a higher resolution, the higher resolution display will have smaller individual pixels.</li>
+            <br>
+            <li>Therefore, the image, which takes up the same number of pixels, will occupy less physical space on the higher resolution display because the pixels are smaller, making the image appear smaller.</li>
+            <br>
+            <li>On the lower resolution display, the pixels are larger, so the image will take up more physical space, making it appear larger.</li>
+        </ul>
+    </div>
+</body>
+</html>

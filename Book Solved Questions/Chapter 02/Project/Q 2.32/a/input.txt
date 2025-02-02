@@ -1,0 +1,4 @@
+<!ENTITY nbsp "&#160;">
+<!ENTITY lt   "&#60;">
+<!ENTITY gt   "&#62;">
+<!ENTITY amp  "&#38;">

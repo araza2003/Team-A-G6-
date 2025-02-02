@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3C Object Element Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#answer">Answer</a>
+    </div>
+
+    <div class="container" id="question">
+        <h2>Question</h2>
+        <p>The W3C recommends the use of the <code>object</code> HTML element for embedding multimedia—including Java applets—in a web page. However, while both IE6 and Mozilla 1.4 implement the <code>object</code> element, the attributes used with this element are generally different in the two browsers. For the most part, IE6 uses the value of the <code>classid</code> attribute (which is similar to a URN) to locate the software that will process the multimedia file. In Mozilla 1.4, on the other hand, the <code>type</code> attribute is typically used to specify a MIME type for the multimedia file, and browser preferences associate specific player software with the MIME type. Give one potential advantage of each of these approaches over the other.</p>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p>The following table compares the advantages of using the <code>classid</code> attribute (in IE6) and the <code>type</code> attribute (in Mozilla 1.4) for embedding multimedia in web pages:</p>
+
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Browser</th>
+                <th>Advantage</th>
+            </tr>
+            <tr>
+                <td><code>classid</code></td>
+                <td>IE6</td>
+                <td>Provides direct control over the software used to process multimedia content, making it suitable for environments requiring specific proprietary software for integration.</td>
+            </tr>
+            <tr>
+                <td><code>type</code></td>
+                <td>Mozilla 1.4</td>
+                <td>Allows the browser to select the appropriate software based on user preferences or browser configurations, offering flexibility and user choice for multimedia handling.</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

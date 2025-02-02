@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exercise 2.12</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        .instructions {
+            margin-top: 20px;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#answer">Answer</a>
+    </div>
+
+    <div class="container" id="question">
+        <h2>Exercise 2.12</h2>
+        <p>You are writing an HTML document that will reside in the App1 subdirectory of the Tomcat webapps/ROOT directory. The App1 directory contains a directory named legal. Write a relative URL that could be used within a document contained in App1 to refer to a document named copyright.html in the legal directory. Write a second relative URL that could be used within copyright.html to refer to an image file named logo.jpg in the App1 directory.</p>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p>The following two relative URLs can be used as described in the exercise:</p>
+        <ul>
+            <li><strong>Relative URL from a document in App1 to copyright.html in the legal directory:</strong> <code>legal/copyright.html</code></li>
+            <br>
+            <li><strong>Relative URL from copyright.html (in the legal directory) to logo.jpg in the App1 directory:</strong> <code>../logo.jpg</code></li>
+        </ul>
+
+        <p>Explanation:</p>
+        <ul>
+            <li>For the first relative URL, since the document is in the <code>App1</code> directory and the <code>legal</code> directory is a subdirectory of <code>App1</code>, the relative URL to <code>copyright.html</code> is simply <code>legal/copyright.html</code>.</li>
+            <br>
+            <li>For the second relative URL, from <code>copyright.html</code> (which is in the <code>legal</code> directory), to the <code>logo.jpg</code> image in the <code>App1</code> directory, we use <code>../logo.jpg</code> because <code>../</code> means to go up one directory level, which takes us back to <code>App1</code>, where the image is located.</li>
+        </ul>
+
+        <p>Below is an example demonstrating how these relative URLs work in the context of a simple website.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- blog-with-profile-and-comments.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Blog with Profile and Comments</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+            margin: 20px;
+        }
+        .content {
+            flex: 3;
+            padding-right: 20px;
+        }
+        .content h1, .content h2 {
+            color: #333;
+        }
+        .content p {
+            line-height: 1.6;
+        }
+        .profile {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+        }
+        .profile img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .profile ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .profile li {
+            margin-bottom: 10px;
+        }
+        .profile label {
+            font-weight: bold;
+        }
+        .blog-post {
+            margin-bottom: 20px;
+        }
+        .comments-section {
+            margin-top: 20px;
+        }
+        .comment {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .comment h3 {
+            margin: 0;
+            color: #555;
+        }
+        .comment p {
+            margin: 5px 0 0;
+            line-height: 1.6;
+        }
+        .add-comment {
+            margin-top: 20px;
+        }
+        .add-comment h2 {
+            color: #333;
+        }
+        .add-comment label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .add-comment input,
+        .add-comment textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .add-comment input[type="submit"],
+        .add-comment input[type="reset"] {
+            width: 49%;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .add-comment input[type="reset"] {
+            background-color: #dc3545;
+        }
+        .add-comment input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .add-comment input[type="reset"]:hover {
+            background-color: #c82333;
+        }
+        .rating-section {
+            margin-top: 20px;
+        }
+        .rating-section label {
+            margin-right: 10px;
+        }
+        .rating-section input[type="radio"] {
+            display: none;
+        }
+        .rating-section input[type="radio"] + label {
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc; /* Default star color */
+        }
+        .rating-section input[type="radio"]:checked + label {
+            color: gold; /* Highlighted star color */
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="content">
+            <!-- Blog Content -->
+            <div class="blog-post">
+                <h1>Welcome to My Blog!</h1>
+                <p>Explore various topics and connect with others through engaging content.</p>
+            </div>
+            <div class="blog-post">
+                <h2>The Joy of Blogging</h2>
+                <p>
+                    Blogging allows us to share our thoughts, ideas, and creativity with the world. 
+                    Whether you're writing about technology, travel, or your personal experiences, 
+                    blogging gives you the freedom to express yourself and connect with others.
+                </p>
+            </div>
+            
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <h3>Ahmed Raza:</h3>
+                    <p>This is a great post! I completely agree with your points about the joy of blogging.</p>
+                </div>
+                <div class="comment">
+                    <h3>Dinesh Kumar:</h3>
+                    <p>Thanks for sharing! Blogging has helped me connect with like-minded people too.</p>
+                </div>
+                <div class="add-comment">
+                    <h2>Add a Title and Comment</h2>
+                    <form action="submit-comment" method="post" onsubmit="return validateForm()">
+                        <fieldset>
+                        <div>
+                        <label for="title">Comment Title:</label>
+                        <input type="text" id="title" name="title"/>
+                        </div>
+                        <div>
+                            <label for="body">Comment Body:</label>
+                            <textarea id="body" name="body" rows="5" cols="50"></textarea>
+                        </div>
+                        <!-- Rating Section -->
+                        <div class="rating-section">
+                            <input type="checkbox" id="rate-blog" name="rate-blog" onclick="toggleRatingOptions()" />
+                            <label for="rate-blog">Rate this blog entry</label><br />
+
+                            <div id="rating-options" style="display: none;">
+                                <input type="radio" id="rating-0" name="rating" value="0" />
+                                <label for="rating-0">☆ ☆ ☆ ☆</label>
+                                
+                                <input type="radio" id="rating-1" name="rating" value="1" />
+                                <label for="rating-1">★ ☆ ☆ ☆</label>
+                                
+                                <input type="radio" id="rating-2" name="rating" value="2" />
+                                <label for="rating-2">★ ★ ☆ ☆</label>
+                                
+                                <input type="radio" id="rating-3" name="rating" value="3" />
+                                <label for="rating-3">★ ★ ★ ☆</label>
+                                
+                                <input type="radio" id="rating-4" name="rating" value="4" />
+                                <label for="rating-4">★ ★ ★ ★</label>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 10px;">
+                            <input type="submit" value="Submit" />
+                            <input type="reset" value="Reset" />
+                        </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile">
+            <img src="MyPic.jpg" alt="Profile Picture" />
+            <ul>
+                <li><label>Name:</label> Syed Zohaib Ahmed Qadri</li>
+                <li><label>Age:</label> 22 </li>
+                <li><label>Place of Birth:</label> Karachi </li>
+                <li><label>Place of Residence:</label> Baldia Town Karachi</li>
+                <li><label>Occupation:</label> Software Developer</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- W3C Validator Link -->
+    <div style="text-align: center; margin: 20px;">
+        <a href="http://validator.w3.org/check/referer">Validate this page</a>
+    </div>
+
+    <script type="text/javascript">
+        function validateForm() {
+            var title = document.getElementById('title').value.trim();
+            var body = document.getElementById('body').value.trim();
+            
+            if (title === '') {
+                alert('Please enter a comment title.');
+                return false;
+            }
+            if (body === '') {
+                alert('Please enter a comment body.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

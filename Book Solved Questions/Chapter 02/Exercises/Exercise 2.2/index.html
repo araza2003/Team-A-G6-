@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exercise 2.2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#figure">Figure</a>
+        <a href="#answer">Answer</a>
+    </div>
+    
+    <div class="container" id="question">
+        <h2>Exercise 2.2</h2>
+        <p>Draw a complete element tree for the XHTML document shown in Figure 2.12. Assume that the head element of the document contains only a title element.</p>
+    </div>
+
+    <div class="container" id="figure">
+        <h2>Figure 2.12</h2>
+        <pre>
+&lt;body&gt;
+    &lt;h1&gt;Some Common HTML Elements&lt;/h1&gt;
+    &lt;h2&gt;Simple formatting elements&lt;/h2&gt;
+    &lt;pre&gt;
+        Use pre (for "preformatted") to
+        preserve white space and use
+        monospace type.
+        (But note that tags such as&lt;br /&gt;still work!)
+    &lt;/pre&gt;
+    &lt;p&gt;
+        A horizontal &lt;span style="font-style:italic"&gt;separating line&lt;/span&gt;
+        is produced using
+        &lt;tt&gt;&lt;strong&gt;hr&lt;/strong&gt;&lt;/tt&gt;:
+    &lt;/p&gt;
+    &lt;hr /&gt;
+    &lt;h2&gt;Other elements&lt;/h2&gt;
+    &lt;p&gt;
+        &lt;img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" style="float:right" /&gt;
+        See &lt;a href="http://www.w3.org/TR/html4/index/elements.html"&gt;the W3C HTML 4.01 Element Index&lt;/a&gt;
+        for a complete list of elements.
+    &lt;/p&gt;
+&lt;/body&gt;
+        </pre>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p><strong>Element Tree:</strong></p>
+        <pre>
+        html
+        ├── head
+        │   └── title
+        └── body
+            ├── h1
+            ├── h2
+            ├── pre
+            ├── p
+            │   ├── span (italic)
+            │   └── tt
+            │       └── strong
+            ├── hr
+            ├── h2
+            └── p
+                ├── img
+                └── a (link)
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exercise 2.8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .extra-space {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#answer">Answer</a>
+    </div>
+    
+    <div class="container" id="question">
+        <h2>Exercise 2.8</h2>
+        <p>What is wrong with the following markup?</p>
+        <pre>
+// Java code example
+if (a &lt; b &amp;&amp; c != d) {
+    System.out.println("Time for donuts!");
+}
+        </pre>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p>The markup provided is incorrect because it uses Java code within HTML without proper escaping for special characters such as `<`, `>`, and `&`. In HTML, these characters must be replaced with HTML entities to avoid confusion with HTML tags and to ensure correct rendering in the browser.</p>
+        <p>The corrected version of the code would look like this:</p>
+        <pre>
+&lt;!-- Java code example --&gt;
+if (a &lt; b &amp;&amp; c != d) {
+    System.out.println("Time for donuts!");
+}
+        </pre>
+    </div>
+
+        </pre>
+    </div>
+</body>
+</html>

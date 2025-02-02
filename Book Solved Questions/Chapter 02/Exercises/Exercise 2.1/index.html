@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exercise 2.1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#figure">Figure</a>
+        <a href="#answer">Answer</a>
+    </div>
+    
+    <div class="container" id="question">
+        <h2>Exercise 2.1</h2>
+        <p>How many tags are contained in Figure 2.1? How many XHTML elements are contained in the figure? Not counting leading and trailing white space, how many characters of content are contained in the document shown in the figure?</p>
+    </div>
+
+    <div class="container" id="figure">
+        <h2>Figure 2.1</h2>
+        <pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;HelloWorld.html&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Hello World!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p><strong>Number of tags:</strong> 11</p>
+        <p><strong>Number of XHTML elements:</strong> 5</p>
+        <p><strong>Number of content characters (excluding whitespace):</strong> 27</p>
+    </div>
+</body>
+</html>

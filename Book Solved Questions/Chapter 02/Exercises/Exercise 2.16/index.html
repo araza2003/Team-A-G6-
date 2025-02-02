@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2.16 - XHTML Head Element</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            margin-top: 10px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#part-a">Part (a)</a>
+        <a href="#part-b">Part (b)</a>
+        <a href="#part-c">Part (c)</a>
+    </div>
+
+    <!-- Question -->
+    <div class="container" id="question">
+        <h2>Question 2.16</h2>
+        <p>The head element is declared as follows in the XHTML 1.0 DTD:</p>
+        <pre>
+&lt;!ENTITY % head.misc "(script|style|meta|link|object)*"&gt;
+&lt;!ELEMENT head (%head.misc;,
+    ((title, %head.misc;, (base, %head.misc;)?) |
+     (base, %head.misc;, (title, %head.misc;))))&gt;
+        </pre>
+        <p>(a) Describe in English what the <code>head.misc</code> entity represents.</p>
+        <p>(b) Describe in English what the content specification of the <code>head</code> element represents. For this part of the problem, just translate the content specification directly into English. Also, you can use <code>head.misc</code> in your description; that is, you do not need to directly mention script, style, etc., in your description.</p>
+        <p>(c) Now rewrite your description from the previous part of this problem more succinctly. That is, analyze the content specification and attempt to understand what it means, not just what it says literally. Once you understand the content specification, you should be able to describe it in English reasonably simply.</p>
+    </div>
+    <!-- Part A -->
+    <div class="container" id="part-a">
+        <h2>Solution:</h2>
+        <h2>Part (a): What does the head.misc entity represent?</h2>
+        <p>The <code>head.misc</code> entity represents a group of elements that are commonly found in the <code>head</code> section of an XHTML document. Specifically, it includes the following elements:</p>
+        <ul>
+            <li><code>script</code> - Used for embedding JavaScript.</li>
+            <br>
+            <li><code>style</code> - Used for embedding CSS styles.</li>
+            <br>
+            <li><code>meta</code> - Provides metadata about the document, such as keywords or description.</li>
+            <br>
+            <li><code>link</code> - Used to link to external resources like stylesheets.</li>
+            <br>
+            <li><code>object</code> - Used to embed multimedia or other objects like Java applets.</li>
+        </ul>
+        <p>In essence, <code>head.misc</code> is a collection of these elements that can appear in any order within the <code>head</code> section of a document.</p>
+    </div>
+
+    <!-- Part B -->
+    <div class="container" id="part-b">
+        <h2>Part (b): Content Specification of the head Element</h2>
+        <p>The content specification of the <code>head</code> element is as follows:</p>
+        <p>It consists of:</p>
+        <ul>
+            <li>A combination of <code>head.misc</code> (which includes script, style, meta, link, and object elements),</li>
+            <br>
+            <li>Followed by a <code>title</code> element,</li>
+            <br>
+            <li>Optionally, more <code>head.misc</code> elements, and</li>
+            <br>
+            <li>Then a <code>base</code> element (which can appear before or after <code>title</code> and <code>head.misc</code>).</li>
+        </ul>
+        <p>The <code>base</code> element is optional but can appear either before or after the <code>title</code> and any <code>head.misc</code> elements.</p>
+    </div>
+
+    <!-- Part C -->
+    <div class="container" id="part-c">
+        <h2>Part (c): Succinct Description of the Content Specification</h2>
+        <p>The content specification for the <code>head</code> element describes a flexible structure. The <code>head</code> section must contain:</p>
+        <ul>
+            <li>A mix of metadata elements like script, style, meta, link, and object (as defined in <code>head.misc</code>),</li>
+            <br>
+            <li>Followed by a title element,</li>
+            <br>
+            <li>And optionally, a base element, which can appear before or after the title and other metadata elements.</li>
+        </ul>
+        <p>In summary, the <code>head</code> element must contain metadata elements (as described by <code>head.misc</code>), followed by a title, and optionally a base element.</p>
+    </div>
+
+</body>
+</html>

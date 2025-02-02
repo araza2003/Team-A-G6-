@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exercise 2.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#answer">Answer</a>
+    </div>
+    
+    <div class="container" id="question">
+        <h2>Exercise 2.5</h2>
+        <p>I recommended that two spaces between sentences be produced by using an &amp;nbsp;
+        reference followed by a space (Section 2.3.4). Why is this approach to producing two
+        spaces between sentences better than either using a space followed by &amp;nbsp; or using
+        two &amp;nbsp; references? (Hint: Think about how the sentences will appear as the browser
+        window is resized.) Your answer should not only describe how the sentences might
+        appear, but also explain why.</p>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p>The recommended approach of using <code>&amp;nbsp;</code> followed by a regular space ensures proper text wrapping behavior as the browser window is resized. Here's why:</p>
+        <ul>
+            <li><strong>&amp;nbsp; followed by a space:</strong> The non-breaking space ensures that the first word and the space stay together, while the second space allows natural wrapping if needed.</li>
+            <br>
+            <li><strong>Space followed by &amp;nbsp;:</strong> The normal space allows wrapping, but if the &amp;nbsp; is at the end of a line, it might cause inconsistent spacing.</li>
+            <br>
+            <li><strong>Two &amp;nbsp; references:</strong> This approach prevents line breaks between the sentences, forcing them to stay on the same line and potentially leading to poor text flow.</li>
+        </ul>
+        <p>Thus, using <code>&amp;nbsp;</code> followed by a space ensures both proper spacing and flexible text wrapping as the browser adjusts.</p>
+    </div>
+</body>
+</html>

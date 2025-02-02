@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exercise 2.10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px #aaa;
+            border-radius: 5px;
+        }
+        .instructions {
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#question">Question</a>
+        <a href="#answer">Answer</a>
+        <a href="#result">Result</a>
+    </div>
+
+    <div class="container" id="question">
+        <h2>Exercise 2.10</h2>
+        <p>Using only XHTML as covered in this chapter, explain how you could provide a web page that contains an image that can be distorted by page visitors. Specifically, by manipulating their browsers, users should be able to stretch the image horizontally. The image may appear distorted when it is initially displayed.</p>
+    </div>
+
+    <div class="container" id="answer">
+        <h2>Answer</h2>
+        <p>To create a web page where visitors can distort an image horizontally by manipulating their browsers, you can utilize the <code>&lt;img&gt;</code> element in XHTML along with CSS. The key idea is to set a fixed width for the image and allow users to change the width using the browser's developer tools or resize the browser window. Here's how it can be done:</p>
+
+        <ul>
+            <li>The image element is displayed with a fixed width and an automatic height, so it will stretch horizontally while keeping the aspect ratio intact initially.</li>
+            <br>
+            <li>However, if the user manipulates the width of the image by using browser tools or resizing the window, they can stretch the image horizontally, causing distortion.</li>
+            <br>
+            <li>By setting the width property in CSS (using percentage or pixels), users can increase or decrease the image's width, which will make the image appear distorted, especially when it is stretched beyond its natural aspect ratio.</li>
+        </ul>
+
+        <p>Below is an example of XHTML markup with an image that users can stretch horizontally:</p>
+
+        <pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;Stretchable Image Example&lt;/title&gt;
+    &lt;style&gt;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Stretchable Image&lt;/h2&gt;
+    &lt;img src="image.jpg" alt="Image to stretch" /&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <p>When displayed, the image will initially appear with its full width, and users can stretch it horizontally by adjusting the browser width or through browser tools, causing the image to distort horizontally.</p>
+    </div>
+
+    <div class="container" id="result">
+        <h2>Result</h2>
+        <p>Here is a demonstration of the stretchable image. The image will appear stretched horizontally when users manipulate the browser's width or use developer tools to adjust the image's width, resulting in distortion.</p>
+        <!-- Example image for demonstration (replace with an actual image URL) -->
+        <img src="image.jpeg" alt="Stretchable image example" />
+    </div>
+</body>
+</html>
